@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    android:background="@drawable/realwhite"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="Study Room"
+            android:layout_marginLeft="100dp"
+            android:textSize="40dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:onClick="onClickedMypage"
+            app:srcCompat="@drawable/my" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginBottom="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="컴퓨터정보통신공학과 자리 예약 어플입니다."
+        />
+
+    <ImageView
+        android:src="@drawable/study"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="15dp"
+    />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:onClick="onClickedLogin"
+        android:text="Login" />
+
+    <Button
+        android:id="@+id/move"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:onClick="onClickedMove"
+        android:text="Move" />
+
+</LinearLayout>
