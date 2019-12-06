@@ -146,6 +146,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:onClick="onClickedRequest"
+        android:background="@drawable/radius"
         android:text="가입 요청" />
 
 
