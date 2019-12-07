@@ -141,13 +141,29 @@
             android:hint="example@kangwon.ac.kr" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/join_btn"
+    <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:onClick="onClickedChange"
-        android:background="@drawable/radius"
-        android:text="수정 완료" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/join_btn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius"
+            android:onClick="onClickedChange"
+            android:text="수정 완료" />
+
+        <Button
+            android:id="@+id/remove_btn"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius"
+            android:layout_weight="1"
+            android:onClick="onClickedRemove"
+            android:text="탈퇴하기" />
+    </LinearLayout>
 
 
 </LinearLayout>

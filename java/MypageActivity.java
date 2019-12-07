@@ -133,6 +133,43 @@ public class MypageActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    public void onClickedRemove(View v) {
+        databaseReference.child("id_list").child(Id).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    name = dataSnapshot.child("name").getValue().toString();
+                    email = dataSnapshot.child("email").getValue().toString();
+                    psw = dataSnapshot.child("psw").getValue().toString();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MypageActivity.this);
+        builder.setTitle("탈퇴하시겠습니까?");
+        builder.setNegativeButton("아니오", null);
+        builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                postIdDatabase(false);
+                String toast_message = "탈퇴가 완료되었습니다.";
+                Toast toast = Toast.makeText(MypageActivity.this, toast_message, Toast.LENGTH_LONG);
+                toast.show();
+
+                Intent intent = new Intent(MypageActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
     public void postIdDatabase(boolean add){
         mPostReference = FirebaseDatabase.getInstance().getReference();
         Map<String, Object> childUpdates = new HashMap<>();
